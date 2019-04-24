@@ -1,0 +1,94 @@
+class Tree:
+	def __init__(self):
+		pass
+
+
+class Node(Tree):
+	def __init__(self, key):
+		self.left   = None
+		self.right  = None
+		self.parent = None
+		self.key    = key
+		
+	def root(self, key):
+		self.left   = None
+		self.right  = None
+		self.parent = None
+		self.key    = key
+	
+	def lchild(self, key):
+		self.left = Node(key)
+		self.left.parent = self
+		return(self.left)
+		
+	def rchild(self, key):
+		self.right = Node(key)
+		self.right.parent = self
+		return(self.right)
+	
+	def InOrder(self):
+		if self.left:  self.left.InOrder()
+		print(self.key, end = " ")
+		if self.right: self.right.InOrder()
+
+	def PreOrder(self):
+		print(self.key, end=" ")
+		if self.left:  self.left.PreOrder()
+		if self.right: self.right.PreOrder()
+
+	def PostOrder(self):
+		if self.left:  self.left.PostOrder()
+		if self.right: self.right.PostOrder()	
+		print(self.key, end=" ")
+
+
+def InOrder2(node):
+	if node == None:
+		return
+	InOrder2(node.left)
+	print(node.key, end = " ")
+	InOrder2(node.right)
+
+def PostOrder2(node):
+	if node == None:
+		return
+	PostOrder2(node.left)
+	PostOrder2(node.right)
+	print(node.key, end = " ")
+
+def PreOrder2(node):
+	if node == None:
+		return
+	print(node.key, end = " ")
+	PreOrder2(node.left)
+	PreOrder2(node.right)
+	
+		
+#def sampleTree():
+n13 = Node(13)
+n39 = n13.lchild(39)
+n83 = n13.rchild(83)
+n84 = n39.lchild(84)
+n98 = n84.lchild(98)
+n71 = n84.rchild(71)
+n28 = n83.rchild(28)
+n58 = n83.lchild(58)
+n5  = n58.rchild(5)
+print("In:   ", end = "")
+n13.InOrder()
+print("\n")
+print("In2:  ", end = "")
+InOrder2(n13)
+print("\n")
+print("Pre:  ", end ="")
+n13.PreOrder()
+print("\n")
+print("Pre2: ", end ="")
+PreOrder2(n13)
+print("\n")
+print("Post: ", end ="")
+n13.PostOrder()
+print("\n")
+print("Post: ", end ="")
+PostOrder2(n13)
+

@@ -1,0 +1,32 @@
+﻿test01.in  Time taken:  0.004000186920166016
+test02.in  Time taken:  0.049002885818481445
+test03.in  Time taken:  0.013000726699829102
+test04.in  Time taken:  0.08600497245788574
+test05.in  Time taken:  0.25101447105407715
+test06.in  Time taken:  0.6640379428863525
+test07.in  Time taken:  0.7560431957244873
+test08.in  Time taken:  2.181124687194824
+test09.in  Time taken:  3.7592151165008545
+test10.in  Time taken:  3.094177007675171
+
+>> test01.in time  0.004000186920166016
+>> test02.in time  0.21201229095458984
+>> test03.in time  0.020000934600830078
+>> test04.in time  0.17000985145568848
+>> test05.in time  0.4630265235900879
+>> test06.in time  2.052117347717285
+>> test07.in time  1.899108648300171
+>> test08.in time  1.8091034889221191
+>> test09.in time  1.920109748840332
+>> test10.in time  1.7591006755828857
+
+>> test01.in Time taken:  0.01000070571899414
+>> test02.in Time taken:  0.11900663375854492
+>> test03.in Time taken:  0.052002906799316406
+>> test04.in Time taken:  0.37502145767211914
+>> test05.in Time taken:  1.4520831108093262
+>> test06.in Time taken:  3.7462143898010254
+>> test07.in Time taken:  5.014286756515503
+>> test08.in Time taken:  7.682439565658569
+>> test09.in Time taken:  7.684439420700073
+>> test10.in Time taken:  8.964512586593628
