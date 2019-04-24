@@ -1,0 +1,235 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-2">
+  <meta http-equiv="cache-control" content="no-cache">
+  <link rel="stylesheet" type="text/css" href="hw6_files/default.html">
+  <title>Zadání úlohy z A4B33ALG</title>
+</head>
+<body>
+ <div class="main">
+
+<h2><font color="blue">Color Graph III</font></h2>
+
+<p align="justify">                                                                                 
+
+Let us associate each node of a simple undirected graph with some color.
+This allows us to identify various types of edges.
+We say that an edge <i>e</i> is of type (<i>c</i><sub>1</sub>, <i>c</i><sub>2</sub>),
+if one of the endnodes of <i>e</i> is associated with color <i>c</i><sub>1</sub> and
+another is associated with color <i>c</i><sub>2</sub>.
+Colors <i>c</i><sub>1</sub> and <i>c</i><sub>2</sub> might or might not be the same. <br>
+
+Let us say that the <i>edge class of type</i> (<i>c</i><sub>1</sub>, <i>c</i><sub>2</sub>) is the
+set of all edges of type (<i>c</i><sub>1</sub>, <i>c</i><sub>2</sub>) in the graph. <br>
+When refering to the type of an edge or an edge class we list the two colors in non-decreasing order.<br><br>
+
+The distance between two edges <i>u</i> and <i>v</i> in is defined as the minimum length of path
+which connects one of end nodes of <i>u</i> to one of end nodes of <i>v</i>. The distance between two
+edges which share an end node is 0. Note, that the distance does not depend on the color of nodes or on the edge types.<br>
+
+The diameter of edge class of any type is the maximum distance between any two of its edges. The diameter
+of a class containing just one or no edge is defined to be 0.
+
+</p>
+
+
+Â&nbsp; 
+Â&nbsp; 
+Â&nbsp; <table width="750" border="0" align="center"><tbody><tr><td align="center">
+
+<img style="width: 773px; height: 226px;" src="hw6_files/getdata.php"> <br>
+<!--	
+<img style="width: 773px; height: 226px;" src="img1.png"/> <br>
+-->
+
+<br>
+<b>Image 1.</b> Three graphs corresponding to Example 1, 2, and 3 below. Node color is written in colored box at
+each particular node.  In case a), there are four edge classes with positive diameter. These edge classes are of type
+(0,&nbsp;2), (0,&nbsp;3), (1,&nbsp;2) and (2,&nbsp;3). The diameters of these classes are 1, 2, 1, and 1, respectively. <br>
+In case b), there are again four edge classes with positive diameter. These edge classes are of type
+(0,&nbsp;0), (0,&nbsp;1), (0,&nbsp;2) and (1,&nbsp;2). The diameters of these classes are 2, 3, 3, and 3, respectively.<br>
+In case c), there are six edge classes with positive diameter. These 
+edge classes are of type
+(0,&nbsp;2), (0,&nbsp;3), (1,&nbsp;4), (1,&nbsp;5), (3,&nbsp;4) and 
+(4,&nbsp;5). The diameters of these classes are 4, 3, 1, 2, 2 and 2, 
+respectively.
+
+
+  </td></tr>
+</tbody></table>
+
+<h3><font color="blue">The task</font></h3>
+<p align="justify">
+You are given a graph and a color of each its node. Find edge classes of
+ all possible types in the graph and list the types of the classes with 
+positive diameter.
+</p>
+<hr>
+
+
+<h3><font color="blue">Input</font></h3>
+<p align="justify">
+The first input line contains three integers <i>N</i>, <i>E</i>, <i>C</i>
+ separated by space and representing (in this order) the number of nodes
+ in the graph, the number of edges in the graph and the number of node 
+colors in the graph.
+We assume that the nodes are labeled 0, 1, ...,  <i>N</i>&#8722;1.
+<br>
+The next line contains <i>N</i> integers, separated by spaces, which 
+represent the list of colors of particular nodes. The colors are listed 
+in ascending order of node labels. The first integer represents the 
+color of node 0, the second integer represents the color of node 1, etc.
+ We assume that the colors are labeled 0, 1, ...,  <i>C</i>&#8722;1.
+<br>
+Next, there are <i>N</i> &#8722;1 text lines, each specifies one edge in the 
+graph. The line contains two integers, separated by space, which 
+represent the labels of the edge endnodes. The edges are listed in no 
+particular order. The input graph is connected.
+<br>
+It holds, 4 &#8804; <i>N</i> &#8804; 1000, 4 &#8804; <i>E</i> &#8804; 2000, 2 &#8804; <i>C</i> &#8804; 100. <br>
+
+</p>
+
+<h3><font color="blue">Output</font></h3>
+<p align="justify">
+The output contains more text lines. Each line contains three values <i>a</i>, <i>b</i>, <i>d</i> separated by space which represent one edge class of type (<i>a</i>, <i>b</i>) and diameter <i>d</i>. The lines are printed in lexicographic order of class types, that is, the type (<i>x</i>, <i>y</i>) comes before the type (<i>z</i>, <i>w</i>) if and only if either <i>x</i> &lt; <i>z</i>, or <i>x</i> = <i>z</i> and <i>y</i> &lt; <i>w</i>. There is always at least one edge class with positive diameter in the input data.
+
+</p>
+
+
+<h3><font color="blue">Example 1</font></h3>
+<b>Input</b><br>
+<pre>9 16 4
+0 1 2 3 0 3 1 2 0
+0 1
+0 2
+0 3
+1 2
+1 4
+1 5
+2 3
+2 5
+2 6
+2 7
+3 7
+3 8
+4 5
+5 6
+6 7
+7 8
+</pre>
+
+<b>Output</b><br>
+<pre>0 2 1
+0 3 2
+1 2 1
+2 3 1
+</pre>
+
+The graph in Example 1 is  depicted in Image 1 a).
+
+
+<!-- EXAMPLE 2 -------------------------------------------------------------------------------------------------------------------- -->
+
+
+
+<h3><font color="blue">Example 2</font></h3>
+<b>Input</b><br>
+<pre>10 22 3
+2 0 1 0 1 2 0 1 2 0
+1 2 
+1 5 
+1 6
+2 5
+2 6
+5 6
+6 7
+0 3
+0 4
+0 7
+0 8
+0 9
+3 4
+3 7
+3 8
+3 9
+4 7
+4 8
+4 9
+7 8
+7 9
+8 9
+</pre>
+
+<b>Output</b><br>
+<pre>0 0 2
+0 1 3
+0 2 3
+1 2 3
+</pre>
+
+The graph in Example 2 is  depicted in Image 1 b).
+
+
+<!-- EXAMPLE 3 -------------------------------------------------------------------------------------------------------------------- -->
+
+
+ <h3><font color="blue">Example 3</font></h3>
+
+<b>Input</b><br>
+<pre>13 18 6
+0 1 2 3 4 5 0 1 2 3 4 5 0
+0 2
+0 3
+1 4
+1 5
+2 3
+3 4
+4 5
+3 7
+4 7
+6 9
+6 10
+7 10
+7 11
+8 11
+8 12
+9 10
+10 11
+11 12
+</pre>
+
+<b>Output</b><br>
+<pre>0 2 4
+0 3 3
+1 4 1
+1 5 2
+3 4 2
+4 5 2
+</pre>
+
+The graph in Example 3 is  depicted in Image 1 c).
+
+
+<hr>
+
+<h3><font color="blue">Public data</font></h3>
+<p align="justify">
+The public data set is intended for easier debugging and approximate 
+program correctness checking. The public data set is stored also in the 
+upload system and each time a student submits a solution it is run on 
+the public dataset and the program output to  stdout and stderr is 
+available to him/her.
+<br>
+<a href="https://cw.felk.cvut.cz/brute/data/ae/release/2018l_be5b33alg/alg_ae/evaluation/getdata.php?task=colorgraphthree&amp;item=datapub.zip"><b>Link to public data set</b></a>
+</p>
+
+
+
+</div>
+
+
+
+
+
+</body></html>
